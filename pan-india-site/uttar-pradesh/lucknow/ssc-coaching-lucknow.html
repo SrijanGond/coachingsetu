@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best SSC Coaching in Lucknow - Compare Institutes & Fees</title>
+<meta name="description" content="Find the best SSC coaching institutes in Lucknow. Compare batch timings, fees and get free counselling.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/index.html">CoachGuide India</a>
+    <nav class="site">
+      <a href="/uttar-pradesh/lucknow/index.html">Home</a>
+      <a href="/uttar-pradesh/lucknow/ssc-coaching-lucknow.html">SSC Coaching</a>
+      <a href="/uttar-pradesh/lucknow/bank-po-coaching-lucknow.html">Bank PO</a>
+      <a href="/uttar-pradesh/lucknow/upsc-coaching-lucknow.html">UPSC</a>
+      <a href="#enquire">Free Counselling</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>SSC coaching in Lucknow — compare top institutes</h1>
+    <p class="lede">Comparing SSC coaching institutes in Lucknow — batch timings, fees, and what to look for.</p>
+    <a class="btn" href="#enquire">Get Free Counselling</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>SSC coaching institutes in Lucknow</h2>
+    <table class="compare">
+      <thead>
+        <tr><th>Institute</th><th>Coverage</th><th>Batch timing</th><th>Fee (approx.)</th></tr>
+      </thead>
+      <tbody id="institute-table-body">
+        <tr data-institute="target-academy"><td>Target Academy</td><td>CGL, CHSL, MTS, GD</td><td>Morning 7 AM - Evening 7 PM</td><td>₹21,000</td></tr>
+        <tr data-institute="paramount-coaching"><td>Paramount Coaching</td><td>SSC Foundation Course</td><td>Mon-Sat, 2 hrs, offline</td><td>₹16,000</td></tr>
+        <tr data-institute="maa-academy"><td>Maa Academy</td><td>SSC (general)</td><td>Morning 7 AM - Evening 7 PM</td><td>₹18,000</td></tr>
+        <tr data-institute="nobel-academy"><td>Nobel Academy</td><td>Confirm CGL/CHSL/MTS split</td><td>Evening 3-6 PM</td><td>₹10,000</td></tr>
+        <tr data-institute="gautam-competition-coaching"><td>Gautam Competition Coaching</td><td>Confirm CGL/CHSL/MTS split</td><td>Morning 7:30-9:30 AM</td><td>₹6,500</td></tr>
+        <tr data-institute="pw-govt-wallah-daksh-ssc-2026"><td>PW Govt Wallah - Daksh SSC 2026</td><td>CGL, CHSL, MTS</td><td>Flexible 2/3/5-hr classes</td><td>₹15,960</td></tr>
+        <tr data-institute="pw-govt-wallah-ssc-foundation-2026"><td>PW Govt Wallah - SSC Foundation 2026</td><td>CGL, CHSL, MTS + others</td><td>Offline, timing to confirm</td><td>₹21,921</td></tr>
+        <tr data-institute="pw-govt-wallah-combo-foundation-2026"><td>PW Govt Wallah - Combo Foundation 2026</td><td>CGL, CHSL, MTS + Banking</td><td>Offline, timing to confirm</td><td>₹28,672</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:#777;margin-top:10px;">Fees marked "to be confirmed" need a follow-up call.</p>
+  </div>
+</section>
+
+<section id="enquire">
+  <div class="wrap">
+    <h2>Get free guidance</h2>
+    <form class="lead">
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" required>
+      <label for="phone">Phone number</label>
+      <input id="phone" name="phone" type="tel" required>
+      <label for="batch">Preferred batch time</label>
+      <select id="batch" name="batch">
+        <option>Morning</option>
+        <option>Evening</option>
+        <option>Weekend</option>
+      </select>
+      <input type="hidden" name="exam" value="SSC">
+      <input type="hidden" id="routed-to" name="routed_to" value="">
+      <button class="btn" type="submit">Submit — get a call back</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <a href="/uttar-pradesh/lucknow/ssc-coaching-lucknow.html">SSC Coaching Lucknow</a>
+    <a href="/uttar-pradesh/lucknow/bank-po-coaching-lucknow.html">Bank PO Coaching Lucknow</a>
+    <a href="/uttar-pradesh/lucknow/upsc-coaching-lucknow.html">UPSC Coaching Lucknow</a>
+    <a href="#enquire">Contact</a>
+    <div style="margin-top:8px;">&copy; 2026 CoachGuide India</div>
+  </div>
+</footer>
+
+<script>
+  const FEATURED_INSTITUTE = ""; // set by generate_site.py from the spreadsheet
+  (function applyFeatured() {
+    const params = new URLSearchParams(window.location.search);
+    const featured = params.get("featured") || FEATURED_INSTITUTE;
+    if (!featured) return;
+    const row = document.querySelector(`#institute-table-body tr[data-institute="${featured}"]`);
+    if (!row) return;
+    row.classList.add("featured-row");
+    const firstCell = row.querySelector("td");
+    if (firstCell && !firstCell.querySelector(".badge")) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "Featured";
+      firstCell.appendChild(badge);
+    }
+    row.parentNode.prepend(row);
+    const routedInput = document.getElementById("routed-to");
+    if (routedInput) routedInput.value = featured;
+  })();
+</script>
+
+</body>
+</html>
