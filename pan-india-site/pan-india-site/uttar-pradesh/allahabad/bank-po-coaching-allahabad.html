@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Bank PO Coaching in Allahabad - Compare Institutes & Fees</title>
+<meta name="description" content="Find the best Bank PO coaching institutes in Allahabad. Compare batch timings, fees and get free counselling.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/index.html">CoachingSetu</a>
+    <nav class="site">
+      <a href="/uttar-pradesh/allahabad/index.html">Home</a>
+      <a href="/uttar-pradesh/allahabad/ssc-coaching-allahabad.html">SSC Coaching</a>
+      <a href="/uttar-pradesh/allahabad/bank-po-coaching-allahabad.html">Bank PO</a>
+      <a href="/uttar-pradesh/allahabad/upsc-coaching-allahabad.html">UPSC</a>
+      <a href="#enquire">Free Counselling</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Bank PO coaching in Allahabad — compare top institutes</h1>
+    <p class="lede">Comparing Bank PO coaching institutes in Allahabad — batch timings, fees, and what to look for.</p>
+    <a class="btn" href="#enquire">Get Free Counselling</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Bank PO coaching institutes in Allahabad</h2>
+    <table class="compare">
+      <thead>
+        <tr><th>Institute</th><th>Coverage</th><th>Batch timing</th><th>Fee (approx.)</th></tr>
+      </thead>
+      <tbody id="institute-table-body">
+        <tr data-institute="institute-a"><td>Institute A</td><td>SBI/IBPS PO, Clerk</td><td>Morning / Evening</td><td>Fee to be confirmed</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:#777;margin-top:10px;">Fees marked "to be confirmed" need a follow-up call.</p>
+  </div>
+</section>
+
+<section id="enquire">
+  <div class="wrap">
+    <h2>Get free guidance</h2>
+    <form class="lead">
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" required>
+      <label for="phone">Phone number</label>
+      <input id="phone" name="phone" type="tel" required>
+      <label for="batch">Preferred batch time</label>
+      <select id="batch" name="batch">
+        <option>Morning</option>
+        <option>Evening</option>
+        <option>Weekend</option>
+      </select>
+      <input type="hidden" name="exam" value="Bank PO">
+      <input type="hidden" id="routed-to" name="routed_to" value="">
+      <button class="btn" type="submit">Submit — get a call back</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <a href="/uttar-pradesh/allahabad/ssc-coaching-allahabad.html">SSC Coaching Allahabad</a>
+    <a href="/uttar-pradesh/allahabad/bank-po-coaching-allahabad.html">Bank PO Coaching Allahabad</a>
+    <a href="/uttar-pradesh/allahabad/upsc-coaching-allahabad.html">UPSC Coaching Allahabad</a>
+    <a href="#enquire">Contact</a>
+    <div style="margin-top:8px;">&copy; 2026 CoachingSetu</div>
+  </div>
+</footer>
+
+<script>
+  const FEATURED_INSTITUTE = ""; // set by generate_site.py from the spreadsheet
+  (function applyFeatured() {
+    const params = new URLSearchParams(window.location.search);
+    const featured = params.get("featured") || FEATURED_INSTITUTE;
+    if (!featured) return;
+    const row = document.querySelector(`#institute-table-body tr[data-institute="${featured}"]`);
+    if (!row) return;
+    row.classList.add("featured-row");
+    const firstCell = row.querySelector("td");
+    if (firstCell && !firstCell.querySelector(".badge")) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "Featured";
+      firstCell.appendChild(badge);
+    }
+    row.parentNode.prepend(row);
+    const routedInput = document.getElementById("routed-to");
+    if (routedInput) routedInput.value = featured;
+  })();
+</script>
+
+</body>
+</html>
